@@ -13,15 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GStore
+namespace GStore.UserControlDaNang
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ControlBarUC.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ControlBarUC : UserControl
     {
-
-        public MainWindow()
+        public ControlBarUC()
         {
             InitializeComponent();
         }

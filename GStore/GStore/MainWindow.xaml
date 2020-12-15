@@ -13,10 +13,9 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
+        DataContext="{StaticResource MainVM}"
         Title="GlassStore" Height="600" Width="800">
     <Grid>
-        <materialDesign:Card HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Width="300">
-            <TextBlock Text="abc"></TextBlock>
-        </materialDesign:Card>
+        
     </Grid>
 </Window>

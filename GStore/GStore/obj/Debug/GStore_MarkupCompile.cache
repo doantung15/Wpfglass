@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Admin\Desktop\GStore\GStore\obj\Debug\
+C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\obj\Debug\
 GStore
 none
 false
 DEBUG;TRACE
-C:\Users\Admin\Desktop\GStore\GStore\App.xaml
-11151548125
+C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\App.xaml
+3-1329396187
 
-5-2017746502
-15-1264566998
-MainWindow.xaml;
+81586643845
+151567480317
+LoginWindow.xaml;MainWindow.xaml;ResourceXAML\MainResource.xaml;
 
 False
 
