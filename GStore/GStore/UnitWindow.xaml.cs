@@ -1,5 +1,4 @@
-﻿using GStore.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GStore.UserControlDaNang
+namespace GStore
 {
     /// <summary>
-    /// Interaction logic for ControlBarUC.xaml
+    /// Interaction logic for UnitWindow.xaml
     /// </summary>
-    public partial class ControlBarUC : UserControl
+    public partial class UnitWindow : Window
     {
-
-        public ControlBarViewModel  Viewmodel { get; set; }
-        public ControlBarUC()
+        public UnitWindow()
         {
             InitializeComponent();
-            this.DataContext = Viewmodel = new ControlBarViewModel();
-            
         }
-
-        
     }
 }

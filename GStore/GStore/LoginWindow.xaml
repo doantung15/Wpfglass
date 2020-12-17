@@ -3,8 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+
         xmlns:local="clr-namespace:GStore"
         mc:Ignorable="d"
+        
+        xmlns:uc="clr-namespace:GStore.UserControlDaNang"
+        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -15,7 +20,9 @@
         FontFamily="{DynamicResource MaterialDesignFont}"  
             ResizeMode="NoResize"
             WindowStyle="None"
+            WindowStartupLocation="CenterScreen"
         
+        Name="loginWindow"
         Title="LoginWindow" Height="300" Width="400">
     <Grid>
         <Grid.RowDefinitions>
@@ -23,7 +30,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Button></Button>
+            <uc:ControlBarUC Tag="{Binding Title,ElementName=loginWindow}" ></uc:ControlBarUC>
         </Grid>
         <materialDesign:Card Grid.Row="1" Width="330" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>

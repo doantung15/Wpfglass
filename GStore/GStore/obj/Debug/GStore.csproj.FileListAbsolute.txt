@@ -46,3 +46,11 @@ C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\obj\Debug\GStore.pdb
 C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\obj\Debug\ResourceXAML\MainResource.baml
 C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\obj\Debug\LoginWindow.g.cs
 C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\obj\Debug\LoginWindow.baml
+C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\obj\Debug\UserControlDaNang\ControlBarUC.g.cs
+C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\obj\Debug\UserControlDaNang\ControlBarUC.baml
+C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\obj\Debug\UnitWindow.g.cs
+C:\Users\Admin\Desktop\Wpfglass\GStore\GStore\obj\Debug\UnitWindow.baml
