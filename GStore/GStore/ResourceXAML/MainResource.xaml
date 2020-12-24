@@ -3,4 +3,7 @@
                     xmlns:viewmodel="clr-namespace:GStore.ViewModel"
                     xmlns:local="clr-namespace:GStore.Resources">
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
+    <viewmodel:LoginViewModel x:Key="loginVM"></viewmodel:LoginViewModel>
+    <viewmodel:UnitViewModel x:Key="UnitVM"></viewmodel:UnitViewModel>
+
 </ResourceDictionary>

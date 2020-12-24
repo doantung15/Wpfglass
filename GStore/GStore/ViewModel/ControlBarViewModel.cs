@@ -8,7 +8,7 @@ using System.Windows.Input;
 using System.Windows;
 namespace GStore.ViewModel
 {
-    public class ControlBarViewModel: BaseViewModel
+    public class ControlBarViewModel : BaseViewModel
     {
         #region commands 
         public ICommand CloseWindowCommand { get; set; }
@@ -27,7 +27,7 @@ namespace GStore.ViewModel
                 {
                     w.Close();
                 }
-            }            
+            }
             );
 
             MaximizeWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) => {
@@ -78,7 +78,7 @@ namespace GStore.ViewModel
 
         FrameworkElement GetWindowParent(UserControl p)
         {
-            FrameworkElement parent =p;
+            FrameworkElement parent = p;
             while (parent.Parent != null)
             {
                 parent = parent.Parent as FrameworkElement;

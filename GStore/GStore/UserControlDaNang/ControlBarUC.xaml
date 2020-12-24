@@ -11,7 +11,7 @@
              
              
              >
-    
+
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="MouseLeftButtonDown">
             <i:InvokeCommandAction Command="{Binding MouseMoveWindowCommand}" CommandParameter="{Binding ElementName=ucControlBar}" />
@@ -48,7 +48,7 @@
                 <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
                     <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
                     <TextBlock VerticalAlignment="Center"   Margin="16 0 0 0" Text="{Binding Tag,ElementName=ucControlBar}">
-                        
+
                     </TextBlock>
                 </StackPanel>
             </DockPanel>

@@ -22,14 +22,14 @@ namespace GStore.UserControlDaNang
     public partial class ControlBarUC : UserControl
     {
 
-        public ControlBarViewModel  Viewmodel { get; set; }
+        public ControlBarViewModel Viewmodel { get; set; }
         public ControlBarUC()
         {
             InitializeComponent();
             this.DataContext = Viewmodel = new ControlBarViewModel();
-            
+
         }
 
-        
+
     }
 }

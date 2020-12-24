@@ -19,7 +19,9 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        
+        x:Name="window"
+        DataContext="{StaticResource UnitVM}"
+
         Title="UnitWindow" Height="300" Width="300">
     <Grid>
         <Grid.RowDefinitions>
@@ -27,7 +29,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <uc:ControlBarUC Tag="{Binding Title, ElementName=mainWindow}" ></uc:ControlBarUC>
+            <uc:ControlBarUC Tag="{Binding Title, ElementName=window}" ></uc:ControlBarUC>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -37,32 +39,35 @@
             </Grid.RowDefinitions>
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <Grid>
-                    <TextBox Text="{Binding DisplayName}" materialDesign:HintAssist.Hint="Nhập"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center" />
+                    <TextBox Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Margin="5" materialDesign:HintAssist.Hint="Nhập"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center" />
                 </Grid>
             </materialDesign:Card>
             <materialDesign:Card Grid.Row="1">
                 <WrapPanel>
-                    <Button Command="{Binding AddCommand}" Content="1x" Margin="5" Width="90"></Button>
-                    <Button Command="{Binding EditCommand}" Content="1x" Margin="5" Width="90"></Button>
-                    <Button Command="{Binding DeleteCommand}" Content="1x" Margin="5" Width="90"></Button>
+                    <Button Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="90"></Button>
+                    <Button Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="90"></Button>
+                    <Button Command="{Binding DeleteCommand}" Content="Xóa" Margin="5" Width="90"></Button>
                 </WrapPanel>
             </materialDesign:Card>
             <materialDesign:Card Grid.Row="2" VerticalAlignment="Stretch">
-                <Grid>
-                    <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ListView ItemsSource="{Binding List,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
-                                <GridViewColumn Header="Tên" DisplayMemberBinding="{Binding DisplayName}"></GridViewColumn>
+                                <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
+                                <GridViewColumn Header="Tên đơn vị đo" DisplayMemberBinding="{Binding DisplayName}"></GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>
-                </Grid>
+                </ScrollViewer>
+
+
+
             </materialDesign:Card>
 
         </Grid>
-        
-        
-        
+
+
+
     </Grid>
 </Window>

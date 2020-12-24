@@ -22,6 +22,8 @@
             WindowStyle="None"
             WindowStartupLocation="CenterScreen"
         
+        DataContext="{StaticResource loginVM}"
+        
         Name="loginWindow"
         Title="LoginWindow" Height="300" Width="400">
     <Grid>
@@ -30,53 +32,57 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <uc:ControlBarUC Tag="{Binding Title,ElementName=loginWindow}" ></uc:ControlBarUC>
+            <uc:ControlBarUC Tag="{Binding Title, ElementName=loginWindow}"></uc:ControlBarUC>
         </Grid>
-        <materialDesign:Card Grid.Row="1" Width="330" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <materialDesign:Card Grid.Row="1" Width="330" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>
                 <Grid.Resources>
                     <Style TargetType="Grid">
-                        <Setter Property="Margin" Value="15 15 15 0"></Setter>
+                        <Setter Property="Margin" Value="15 0 15 0"></Setter>
                     </Style>
                 </Grid.Resources>
-                    <Grid.RowDefinitions>
+                <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                <Grid Grid.Row="0" >
-                    <TextBox
-                        materialDesign:HintAssist.Hint="Floating Hint"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        VerticalAlignment="Center" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBox materialDesign:HintAssist.Hint="Tên đăng nhập"
+                             Text="{Binding UserName}"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </Grid>
                 <Grid Grid.Row="1">
-                    <PasswordBox
-                        x:Name="PasswordBox"
-                        materialDesign:HintAssist.Hint="Password"
-                        materialDesign:TextFieldAssist.HasClearButton="True"
-                        materialDesign:HintAssist.HelperText="At least 8 characters" />
+                    <PasswordBox x:Name="FloatingPasswordBox"
+                                 materialDesign:HintAssist.Hint="Mật khẩu"
+                                 Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" >
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PasswordChanged">
+                                <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}" 
+                                   CommandParameter="{Binding ElementName=FloatingPasswordBox}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </PasswordBox>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
-                        
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0"
-                            Style="{StaticResource MaterialDesignRaisedButton}"
-                            Width="110"
-                            Background="Green"
-                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="Đăng Nhập">
-                        
-                    </Button>
-                    <Button Grid.Column="1"
-                            Style="{StaticResource MaterialDesignRaisedButton}"
-                            Width="110"
-                            Background="Red"
-                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="Thoát">
-                        
-                    </Button>
+
+                    <Button Grid.Column="0"    
+                            IsDefault="True"
+                            Style="{StaticResource MaterialDesignRaisedButton}"    
+                            Width="110"  
+                            Command="{Binding LoginCommand}"
+                            CommandParameter="{Binding ElementName=loginWindow}"
+                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="Đăng nhập"></Button>
+                    <Button Grid.Column="1"    
+                            Style="{StaticResource MaterialDesignRaisedButton}"    
+                            Width="110"   
+                            Command="{Binding CloseCommand}"                          
+                            CommandParameter="{Binding ElementName=loginWindow}"
+                            Background="OrangeRed"
+                            ToolTip="Resource name: MaterialDesignRaisedButton" Content="Thoát"></Button>
                 </Grid>
             </Grid>
         </materialDesign:Card>
