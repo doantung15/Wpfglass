@@ -16,6 +16,9 @@ namespace GStore.ViewModel
         private ObservableCollection<TonKho> _TonKhoList;
         public ObservableCollection<TonKho> TonKhoList { get => _TonKhoList; set { _TonKhoList = value; OnPropertyChanged(); } }
 
+        private string _km;
+        public string km { get => _km; set { _km = value; OnPropertyChanged(); } }
+
 
         public bool Isloaded = false;
         public ICommand LoadedWindowCommand { get; set; }
@@ -73,35 +76,47 @@ namespace GStore.ViewModel
         {
             TonKhoList = new ObservableCollection<TonKho>();
 
-            var objectList = DataProvider.Ins.DB.Objects;
-            int i = 1;
+            var objectList = DataProvider.Ins.DB.GlassStorages;
+            km = "2";
+
+
             foreach (var item in objectList)
-            {
-                var inputList = DataProvider.Ins.DB.InputInfoes.Where(p => p.IdObject == item.Id);
-                var outputList = DataProvider.Ins.DB.OutputInfoes.Where(p => p.IdObject == item.Id);
-
-                int sumInput = 0;
-                int sumOutput = 0;
-                if (inputList != null)
-                {
-                    sumInput = (int)inputList.Sum(p => p.Count);
-                }
-                if (outputList != null)
-                {
-                    sumOutput = (int)outputList.Sum(p => p.Count);
-                }
-
+            {                               
                 TonKho tonkho = new TonKho();
-                tonkho.STT = i;
-                tonkho.Count = sumInput - sumOutput;
-                tonkho.Object = item;
+                tonkho.glassStorage = item;                
                 TonKhoList.Add(tonkho);
-                i++;
-
-
-
             }
-        }
+                //}
+                //int i = 1;
+                //foreach (var item in objectList)
+                //{
+                //    var inputList = DataProvider.Ins.DB.InputInfoes.Where(p => p.IdObject == item.Id);
+                //    var outputList = DataProvider.Ins.DB.OutputInfoes.Where(p => p.IdObject == item.Id);
+
+                //    int sumInput = 0;
+                //    int sumOutput = 0;
+                //    if (inputList != null)
+                //    {
+                //        sumInput = (int)inputList.Sum(p => p.Count);
+                //    }
+                //    if (outputList != null)
+                //    {
+                //        sumOutput = (int)outputList.Sum(p => p.Count);
+                //    }
+
+
+
+                //    TonKho tonkho = new TonKho();
+                //    tonkho.STT = i;
+                //    //tonkho.Count = DataProvider.Ins.DB.;
+                //    tonkho.glassStorage = item;
+                //    TonKhoList.Add(tonkho);
+                //    i++;
+
+
+
+                //}
+            }
     }
 
 

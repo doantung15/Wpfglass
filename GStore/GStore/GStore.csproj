@@ -82,6 +82,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DataProvider.cs" />
+    <Compile Include="Model\GlassStorage.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Input.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

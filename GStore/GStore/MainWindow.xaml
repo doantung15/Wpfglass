@@ -321,6 +321,7 @@
                                 </Grid>
                                 <Grid Grid.Column="2" Margin="5">
                                     <materialDesign:Card
+                                        
                                         Background="#03a9f4"
                                         Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                                         Padding="0"  Width="200">
@@ -338,11 +339,12 @@
                                             </TextBlock>
                                             <Separator Grid.Row="1" Style="{StaticResource MaterialDesignLightSeparator}" />
                                             <TextBlock
+                                                
                                                 Grid.Row="2"
                                                 Margin="16 0 16 8"
                                                 VerticalAlignment="Center"
                                                 HorizontalAlignment="Left"
-                                                Text="123456"
+                                                Text="{Binding km,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                                                 Style="{StaticResource MaterialDesignHeadline3TextBlock}">
                                             </TextBlock>
 
@@ -392,9 +394,9 @@
                             <ListView ItemsSource="{Binding TonKhoList}">
                                 <ListView.View>
                                     <GridView>
-                                        <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"></GridViewColumn>
-                                        <GridViewColumn Header="Barcode" DisplayMemberBinding="{Binding Object.DisplayName}" ></GridViewColumn>
-                                        <GridViewColumn Header="Station" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
+                                        <GridViewColumn Header="STT" DisplayMemberBinding="{Binding glassStorage.Id}"></GridViewColumn>
+                                        <GridViewColumn Header="Barcode" DisplayMemberBinding="{Binding glassStorage.BarCode}" ></GridViewColumn>
+                                        <GridViewColumn Header="Station" DisplayMemberBinding="{Binding glassStorage.Station}"></GridViewColumn>
 
                                     </GridView>
                                 </ListView.View>

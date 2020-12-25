@@ -4,6 +4,14 @@ go
 use GStore
 go
 
+create table GlassStorage
+(
+	Id int identity(1,1) primary key,
+	BarCode nvarchar(max),
+	Station nvarchar(255)
+)
+go
+
 create table Unit
 (
 	Id int identity(1,1) primary key,

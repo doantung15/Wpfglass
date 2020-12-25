@@ -26,6 +26,7 @@ namespace GStore.Model
         }
     
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<GlassStorage> GlassStorages { get; set; }
         public virtual DbSet<Input> Inputs { get; set; }
         public virtual DbSet<InputInfo> InputInfoes { get; set; }
         public virtual DbSet<Object> Objects { get; set; }

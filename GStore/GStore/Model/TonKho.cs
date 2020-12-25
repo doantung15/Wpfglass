@@ -8,7 +8,9 @@ namespace GStore.Model
 {
     public class TonKho
     {
-        public Object Object { get; set; }
+
+        //public Object Object { get; set; }
+        public GlassStorage glassStorage { get; set; }
         public int STT { get; set; }
         public int Count { get; set; }
     }

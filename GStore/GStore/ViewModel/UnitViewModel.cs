@@ -44,6 +44,7 @@ namespace GStore.ViewModel
                 if (string.IsNullOrEmpty(DisplayName))
                     return false;
                 var displayList = DataProvider.Ins.DB.Units.Where(x => x.DisplayName == DisplayName);
+                
                 if (displayList == null || displayList.Count() != 0)
                     return false;
                 return true;
