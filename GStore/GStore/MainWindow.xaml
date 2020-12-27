@@ -394,7 +394,7 @@
                             <ListView ItemsSource="{Binding TonKhoList}">
                                 <ListView.View>
                                     <GridView>
-                                        <GridViewColumn Header="STT" DisplayMemberBinding="{Binding glassStorage.Id}"></GridViewColumn>
+                                        <GridViewColumn Header="STT" DisplayMemberBinding="{Binding glassStorage.Id}" ></GridViewColumn>
                                         <GridViewColumn Header="Barcode" DisplayMemberBinding="{Binding glassStorage.BarCode}" ></GridViewColumn>
                                         <GridViewColumn Header="Station" DisplayMemberBinding="{Binding glassStorage.Station}"></GridViewColumn>
 

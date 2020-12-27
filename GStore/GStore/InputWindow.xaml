@@ -21,8 +21,10 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         x:Name="window"
+        DataContext="{StaticResource InputVM}"
+
         
-        Title="Nhập Kho" Height="300" Width="500">
+        Title="Nhập Kho" Height="300" Width="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -31,47 +33,40 @@
         <Grid Grid.Row="0">
             <uc:ControlBarUC Tag="{Binding Title, ElementName=window}" ></uc:ControlBarUC>
         </Grid>
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" ></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <materialDesign:Card Grid.Row="0" Margin="5">
-                <WrapPanel>
-                    <TextBox Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Tên đăng Nhập"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center" />
-                    <ComboBox Margin="5 5 15 5" ItemsSource="{Binding Role}" SelectedItem="{Binding SelectedRole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  materialDesign:HintAssist.Hint="Quyền"   Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
-
-                    <TextBox Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Tên hiển thị"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  VerticalAlignment="Center" />
-
-                </WrapPanel>
-            </materialDesign:Card>
+        <Grid Grid.Row="1">          
             <materialDesign:Card Grid.Row="1">
                 <WrapPanel>
-                    <Button Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="90"></Button>
+                    <!--<Button Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="90"></Button>
                     <Button Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="90"></Button>
                     <Button Command="{Binding DeleteCommand}" Content="Xóa" Margin="5" Width="90"></Button>
-                    <Button Command="{Binding ChangePasswordCommand}" Content="Đổi Pass" Margin="5" Width="90"></Button>
+                    <Button Command="{Binding ChangePasswordCommand}" Content="Đổi Pass" Margin="5" Width="90"></Button>-->
+                    <Button Content="Station1" Margin="5" Width="100"  Background="Red"></Button>
+                    <Button Content="Station2" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station3" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station4" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station5" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station6" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station7" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station8" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station9" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station10" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station11" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station12" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station13" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station14" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station15" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station16" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station17" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station18" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station19" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station20" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station21" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station22" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station23" Margin="5" Width="100" Background="Red"></Button>
+                    <Button Content="Station24" Margin="5" Width="100" Background="Red"></Button>
 
                 </WrapPanel>
-            </materialDesign:Card>
-            <materialDesign:Card Grid.Row="2" VerticalAlignment="Stretch">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}"></GridViewColumn>
-                                <GridViewColumn Header="Tên đăng nhập" DisplayMemberBinding="{Binding UserName}"></GridViewColumn>
-                                <GridViewColumn Header="Chức vụ" DisplayMemberBinding="{Binding Role.DisplayName}"></GridViewColumn>
-                                <GridViewColumn Header="Tên hiển thị" DisplayMemberBinding="{Binding DisplayName}"></GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </ScrollViewer>
-
-
-
-            </materialDesign:Card>
+            </materialDesign:Card>           
 
         </Grid>
 

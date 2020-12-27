@@ -75,17 +75,38 @@ namespace GStore.ViewModel
         void LoadTonKhoData()
         {
             TonKhoList = new ObservableCollection<TonKho>();
-
+            int i = 0;
             var objectList = DataProvider.Ins.DB.GlassStorages;
-            km = "2";
 
 
+
+            // thuat toan tim kiem voi bien xac dinh
+            //var inputList = DataProvider.Ins.DB.GlassStorages.Where(x => x.BarCode == "123213");
+
+            //for (int k = 0; k < inputList.Count(); k++)
+            //{
+            //    if (inputList != null)
+            //    {
+            //        i++;
+            //    }
+            //}
+            //km = Convert.ToString(i);
+
+            var inputList = DataProvider.Ins.DB.GlassStorages.Where(x => x.BarCode != null);
+            km = Convert.ToString(inputList.Count());
+
+            // thuat toan hien thi tu sql len listview
             foreach (var item in objectList)
-            {                               
+            {
+                          
+                
                 TonKho tonkho = new TonKho();
                 tonkho.glassStorage = item;                
                 TonKhoList.Add(tonkho);
+                
             }
+            
+            
                 //}
                 //int i = 1;
                 //foreach (var item in objectList)
